@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open in Another Browser</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Open in Another Browser</h1>
+      <p id="status" class="status">Loading…</p>
+
+      <button id="open-last" class="primary">Open in last used browser</button>
+
+      <section>
+        <h2>Choose browser</h2>
+        <div id="targets" class="targets"></div>
+      </section>
+
+      <section class="footer">
+        <p id="current-url" class="url"></p>
+        <p class="hint">Chrome extension MVP: a locally installed native host opens the URL and remembers the last used browser.</p>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

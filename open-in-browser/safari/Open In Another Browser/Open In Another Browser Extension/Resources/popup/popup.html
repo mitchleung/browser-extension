@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open in Another Browser</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Open in another browser</h1>
+      <p id="status" class="status">Loading…</p>
+      <p id="current-url" class="current-url" title="Current tab URL"></p>
+
+      <section class="actions">
+        <button id="open-last" class="primary">Open in last used</button>
+      </section>
+
+      <section>
+        <h2>Choose browser</h2>
+        <div id="targets" class="targets"></div>
+      </section>
+
+      <p class="hint">Safari Web Extension MVP: the containing macOS app opens the URL in Helium/Zen and remembers the last used browser.</p>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

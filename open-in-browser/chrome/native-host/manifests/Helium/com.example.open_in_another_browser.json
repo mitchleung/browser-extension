@@ -1,0 +1,9 @@
+{
+  "name": "com.example.open_in_another_browser",
+  "description": "Open URLs in another browser for the Open in Another Browser extension",
+  "path": "/ABSOLUTE/PATH/TO/open-in-browser/chrome/native-host/host",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://YOUR_EXTENSION_ID_HERE/"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Open in Another Browser",
+  "version": "0.1.0",
+  "description": "Open the current tab URL in another browser (e.g. Helium or Zen). Remembers the last used browser.",
+  "permissions": ["activeTab", "tabs", "storage", "nativeMessaging"],
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_title": "Open in Another Browser",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "description": "Show extension menu"
+    },
+    "open-last-used": {
+      "description": "Open current tab in last used browser"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

@@ -1,0 +1,15 @@
+//
+//  Sample.xcconfig
+//  Open In Another Browser
+//
+//  Created by Mitch Leung on 16/11/2026.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+APP_BUNDLE_IDENTIFIER = com.example.openinanotherbrowser
+EXTENSION_BUNDLE_IDENTIFIER = com.example.openinanotherbrowser.Extension
+
+// Your Apple Development Team ID (optional; can also be set via Xcode signing).
+DEVELOPMENT_TEAM =

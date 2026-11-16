@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Open in Another Browser",
+  "version": "0.1.0",
+  "description": "Open the current tab URL in another browser (e.g. Helium or Zen). Remembers the last used browser.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "nativeMessaging"
+  ],
+  "action": {
+    "default_title": "Open in Another Browser",
+    "default_popup": "popup/popup.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "description": "Show extension menu"
+    },
+    "open-last-used": {
+      "description": "Open current tab in last used browser"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

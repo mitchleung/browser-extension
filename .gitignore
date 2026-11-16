@@ -1,0 +1,70 @@
+
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+DerivedData/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# IDE / editors
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+# Xcode (user-specific / local state)
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcuserdatad
+*.xcworkspace/xcuserdata/
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager (if used later)
+.swiftpm/
+.build/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local/private xcconfig (keep Sample.xcconfig tracked)
+**/xcconfig/Local.xcconfig
+Local.xcconfig
+
+
+# Generated Safari Web Extension Xcode project
+# (ignored for now to avoid committing local/user-specific Xcode data)
+open-in-browser/safari-mvp/xcode-app/
+
+# graphic assets
+*/graphic-assets/
