@@ -42,6 +42,7 @@ chmod +x host host.py
 ```
 
 The host stores last-used/config data at:
+
 - `~/Library/Application Support/OpenInAnotherBrowser/config.json`
 
 ## 2) Load the extension in Chrome (or another Chromium browser)
@@ -59,24 +60,28 @@ The host stores last-used/config data at:
 Chrome/Chromium browsers require a host manifest file installed in that browser’s `NativeMessagingHosts` directory.
 
 ### 3.1 Choose the correct manifest copy
+
 Use the template/copy for your browser from:
+
 - `native-host/com.example.open_in_another_browser.json` (template), or
 - `native-host/manifests/<Browser>/com.example.open_in_another_browser.json`
 
 Supported/common macOS locations (see `native-host/manifests/README.md` for details):
 
-| Browser | Manifest directory |
-|---|---|
-| Google Chrome | `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/` |
-| Chromium | `~/Library/Application Support/Chromium/NativeMessagingHosts/` |
-| Brave | `~/Library/Application Support/BraveSoftware/Brave-Browser/NativeMessagingHosts/` |
-| Microsoft Edge | `~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/` |
-| Helium | `~/Library/Application Support/net.imput.helium/NativeMessagingHosts/` *(likely; verify)* |
+| Browser        | Manifest directory                                                                        |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| Google Chrome  | `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/`                       |
+| Chromium       | `~/Library/Application Support/Chromium/NativeMessagingHosts/`                            |
+| Brave          | `~/Library/Application Support/BraveSoftware/Brave-Browser/NativeMessagingHosts/`         |
+| Microsoft Edge | `~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/`                      |
+| Helium         | `~/Library/Application Support/net.imput.helium/NativeMessagingHosts/` _(likely; verify)_ |
 
 Create the `NativeMessagingHosts` directory if it does not exist.
 
 ### 3.2 Edit the installed manifest
+
 Install/copy the file as:
+
 - `com.example.open_in_another_browser.json`
 
 Then update these fields:
@@ -85,7 +90,7 @@ Then update these fields:
 - **`type`**: must remain `stdio`
 - **`path`**: absolute path to the host launcher, for example:
   ```json
-  "path": "/Users/mitch/Development/github/browser-extension/open-in-browser/chrome/native-host/host"
+  "path": "/ABSOLUTE/PATH/TO/open-in-browser/chrome/native-host/host"
   ```
 - **`allowed_origins`**: set to the extension ID for that browser, for example:
   ```json
@@ -94,6 +99,7 @@ Then update these fields:
   (keep the `chrome-extension://` prefix and trailing `/`)
 
 ### 3.3 Reload
+
 - Reload the extension (or restart the browser) after installing/updating the manifest
 - Open an `http(s)` page and use the extension popup
 
@@ -123,6 +129,7 @@ defaults read /Applications/Firefox.app/Contents/Info.plist CFBundleIdentifier
 ## Troubleshooting
 
 ### “Native messaging unavailable…” / “No target browsers configured…”
+
 - Confirm the manifest is installed in the **correct browser’s** `NativeMessagingHosts` directory
 - Confirm `allowed_origins` contains the **current extension ID** for that browser
 - Confirm `path` is an **absolute** path to `.../open-in-browser/chrome/native-host/host` (or another valid host executable)
@@ -131,9 +138,11 @@ defaults read /Applications/Firefox.app/Contents/Info.plist CFBundleIdentifier
 - Reload the extension and fully restart the browser if needed
 
 ### “Failed: TARGET_APP_NOT_FOUND / OPEN_FAILED”
+
 - The target browser may not be installed, or its bundle ID/app path differs on your system
 - Update the target’s `bundleIdentifier` / `appPath` in `native-host/host.py` (or config file)
 
 ### Notes for Helium / Firefox / Zen
+
 - **Helium (Chromium-based):** may work with this Chrome extension + native host if you install the manifest in Helium’s correct `NativeMessagingHosts` path and use the Helium extension ID
 - **Firefox / Zen (Firefox-based):** this Chrome extension/native messaging manifest format does not apply; a Firefox-compatible extension and Firefox native messaging setup are required
